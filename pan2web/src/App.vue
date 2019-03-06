@@ -1,21 +1,19 @@
 <template>
   <div>
-    <div>
-      <form>
-        <input>
-        <button>submit</button>
-      </form>
-    </div>
-    <div>
-      <ul>
-        <li></li>
-      </ul>
-    </div>
+    <TodoInput/>
+    <ul>
+      <TodoItem/>
+    </ul>
   </div>
 </template>
 
 <script>
+import TodoInput from "./components/TodoInput.vue";
+import TodoItem from "./components/TodoItem.vue";
 export default {
-  
+  components: {
+    TodoInput,
+    TodoItem,
+  }
 };
 </script>
