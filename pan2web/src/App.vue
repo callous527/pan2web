@@ -2,7 +2,7 @@
   <div>
     <TodoInput @addTodoItem="addTodoItem"/>
     <ul>
-      <TodoItem v-for="todo in todos" :data="todo"/>
+      <TodoItem v-for="(todo,index) in todos" :data="todo" :key="index" @click.native="deleteTodoItem(index)"/>
     </ul>
   </div>
 </template>
@@ -23,6 +23,9 @@ export default {
   methods: {
     addTodoItem(text) {
       this.todos.push(text);
+    },
+    deleteTodoItem(index){
+      this.todos.splice(index,1);
     }
   }
 };
