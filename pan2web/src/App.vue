@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TodoInput/>
+    <TodoInput @addTodoItem="addTodoItem"/>
     <ul>
       <TodoItem v-for="todo in todos" :data="todo"/>
     </ul>
@@ -13,12 +13,17 @@ import TodoItem from "./components/TodoItem.vue";
 export default {
   components: {
     TodoInput,
-    TodoItem,
+    TodoItem
   },
-  data(){
+  data() {
     return {
-      todos: ['123','456'],
+      todos: []
     };
+  },
+  methods: {
+    addTodoItem(text) {
+      this.todos.push(text);
+    }
   }
 };
 </script>
