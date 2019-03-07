@@ -2,7 +2,7 @@
   <div>
     <TodoInput/>
     <ul>
-      <TodoItem/>
+      <TodoItem v-for="todo in todos" :data="todo"/>
     </ul>
   </div>
 </template>
@@ -14,6 +14,11 @@ export default {
   components: {
     TodoInput,
     TodoItem,
+  },
+  data(){
+    return {
+      todos: ['123','456'],
+    };
   }
 };
 </script>
