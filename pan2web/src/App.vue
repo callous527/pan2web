@@ -1,32 +1,8 @@
 <template>
-  <div>
-    <TodoInput @addTodoItem="addTodoItem"/>
-    <ul>
-      <TodoItem v-for="(todo,index) in todos" :data="todo" :key="index" @click.native="deleteTodoItem(index)"/>
-    </ul>
-  </div>
+  <div></div>
 </template>
 
 <script>
-import TodoInput from "./components/TodoInput.vue";
-import TodoItem from "./components/TodoItem.vue";
-export default {
-  components: {
-    TodoInput,
-    TodoItem
-  },
-  data() {
-    return {
-      todos: []
-    };
-  },
-  methods: {
-    addTodoItem(text) {
-      this.todos.push(text);
-    },
-    deleteTodoItem(index){
-      this.todos.splice(index,1);
-    }
-  }
-};
+
+export default {};
 </script>
