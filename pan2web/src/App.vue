@@ -1,21 +1,21 @@
 <template>
   <div>
-    <div>
-      <nav>
+    <div id="header">
+      <nav id="menu">
         <ul>
           <li @click="fbConnect">
             <div id="facebookImg" :style="fbImg(fbStatus.isLogin)"></div>
           </li>
           <li>
-            <router-link to="/Home">Home</router-link>
+            <router-link tag="li" to="/Home">Home</router-link>
           </li>
           <li>
-            <router-link to="/TodoList">TodoList</router-link>
+            <router-link tag="li" to="/TodoList">TodoList</router-link>
           </li>
         </ul>
       </nav>
     </div>
-    <div>
+    <div id="content">
       <router-view/>
     </div>
   </div>
@@ -66,10 +66,40 @@ export default {
 };
 </script>
 <style>
+body {
+  background-image: url("./assets/bears.jpg");
+  background-size: 100%;
+}
+#header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(16, 17, 17, 0.555);
+}
+#menu {
+  max-width: 700px;
+  margin: 0 auto;
+}
+#menu ul {
+  list-style: none;
+}
 #facebookImg {
   width: 50px;
   height: 50px;
   background-image: url("./assets/F_icon.svg");
   background-size: 100%;
+}
+#menu ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 10px;
+  color: white;
+}
+#content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  top: 100px;
 }
 </style>
