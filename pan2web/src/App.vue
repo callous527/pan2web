@@ -7,10 +7,13 @@
             <div id="facebookImg" :style="fbImg(fbStatus.isLogin)"></div>
           </li>
           <li>
-            <router-link tag="li" to="/Home">Home</router-link>
+            <router-link tag="li" to="/Home">pan2web</router-link>
           </li>
           <li>
-            <router-link tag="li" to="/TodoList">TodoList</router-link>
+            <router-link tag="li" to="/TodoList">代辦事項</router-link>
+          </li>
+          <li>
+            <router-link tag="li" to="/WorkOutNote">鍛鍊紀錄</router-link>
           </li>
         </ul>
       </nav>
@@ -25,12 +28,13 @@
 import VueRouter from "vue-router";
 import TodoList from "./components/TodoList.vue";
 import Home from "./components/Home.vue";
-
+import WorkOutNote from "./components/WorkOutNote.vue";
 export default {
   router: new VueRouter({
     routes: [
       { path: "/TodoList", component: TodoList },
-      { path: "/Home", component: Home }
+      { path: "/Home", component: Home },
+      { path: "/WorkOutNote", component: WorkOutNote }
     ]
   }),
   data() {
@@ -69,37 +73,40 @@ export default {
 body {
   background-image: url("./assets/bears.jpg");
   background-size: 100%;
+  font-family: Microsoft JhengHei;
 }
 #header {
   position: fixed;
-  width: 100%;
-  height: 80px;
-  background-color: rgba(16, 17, 17, 0.555);
+  width: 100vw;
+  height: 7vh;
+  /* background-color: rgba(80, 82, 81, 0.63); */
 }
 #menu {
-  max-width: 700px;
+  max-width: 70%;
   margin: 0 auto;
 }
 #menu ul {
   list-style: none;
 }
 #facebookImg {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-image: url("./assets/F_icon.svg");
   background-size: 100%;
 }
 #menu ul li {
   position: relative;
   float: left;
-  margin: 0;
-  padding: 10px;
-  color: white;
+  color: rgba(0, 0, 0, 0.637);
+  font-size: 140%;
+  width: 11vw;
+  float: left;
+  text-align: center;
 }
 #content {
   position: relative;
-  max-width: 800px;
+  max-width: 70%;
   margin: 0 auto;
-  top: 100px;
+  top: 13vh;
 }
 </style>
